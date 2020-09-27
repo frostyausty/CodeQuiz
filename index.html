@@ -7,28 +7,39 @@
     <link rel="stylesheet" href="./assets/style.css">
 </head>
 
-<body>
-    <header>
-        <div class="highscore">
-            High Score
+<body id = "grid">
+    <header class ="header" id="header">
+        <div id="highscore">
+            <button>High Score</button>
         </div>
 
-        <div class="timer">
+        <div id="timer">
             Timer 
         </div>
     </header>
 
-    <section class="quiz"> 
-        <div class="questionCount">Question # </div>
-        <h2 class= "question"> Question </h2>
-        <div>
-            <ul class= "answers">
-                <li class= "answer1"><button id="btn1"></button></li>
-                <li class= "answer2"><button id="btn2"></button></li>
-                <li class= "answer3"><button id="btn3"></button></li>
-                <li class= "answer4"><button id="btn4"></button></li>
-            </ul>
+    <section class ="content"> 
+        <div class = "start" id = "start">
+            <h1>Welcome to the coding quiz!</h1>
+            <p>
+                You have 75 seconds to complete the quiz. With each wrong answer you lose 10 seconds.. Good luck!
+            </p>
+            <button id="startBtn">Start</button>
         </div>
+
+        <div class="quiz hide" id="quiz">
+            <div class="questionCount">Question # </div>
+            <h2 id ="question"> Question </h2>
+            <div>
+                <ul class= "answers">
+                    <li class= "answer1"><button id="btn1"></button></li>
+                    <li class= "answer2"><button id="btn2"></button></li>
+                    <li class= "answer3"><button id="btn3"></button></li>
+                    <li class= "answer4"><button id="btn4"></button></li>
+                </ul>
+            </div>
+        </div>
+
     </section>
 
     <footer>
