@@ -5,6 +5,7 @@ var endSection = document.getElementById('end');
 var questionEl = document.getElementById('question');
 var userAnswerEl = document.querySelector(".answers");
 var highScoreDisplay = document.getElementById('highscore');
+var submitScore = document.getElementById('initialsubmit');
 var questionNumber = 0;
 var highScoreEl = 0;
 var timerMax = 70;
@@ -99,9 +100,26 @@ function questionCheck(){
 // ends the quiz, displays user score
 function endQuiz() {
     endSection.classList.remove('hide');
+    document.getElementById('form').classList.remove('hide');
     quizBox.classList.add('hide');
     document.getElementById('score').textContent= "Your score is:  " + highScoreEl;
     clearInterval(StartTime);
+    submitScore.addEventListener('click',submitInt);
+}
+
+//User submits their initials to match their highscore
+var submitInt = function(){
+    userInt = document.getElementById("input").value; 
+    initial = localStorage.setItem("initials", JSON.stringify(userInt));
+    finalScore = localStorage.setItem("final score", JSON.stringify(highScoreEl));
+    console.log(finalScore);
+}
+
+var highScoreLoad = function(){
+    highScoreInt = localStorage.getItem("initials", highScoreEl);
+    highScoreScore = localStorage.getItem("final score", highScoreEl);
+    highScoreInt = JSON.parse(highScoreInt);
+    highScoreScore = JSON.parse(highScoreScore);
 }
 
 startButton.addEventListener('click', startQuiz);
