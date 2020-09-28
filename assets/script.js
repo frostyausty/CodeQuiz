@@ -2,6 +2,12 @@ var startButton = document.getElementById('startBtn');
 var quizBox = document.getElementById('quiz');
 var startSection = document.getElementById('start');
 var questionEl = document.getElementById('question');
+var questionNumber = 0;
+var userAnswerEl = document.querySelector(".answers");
+var highScoreEl = 0;
+var highScoreDisplay = document.getElementById('highscore');
+
+
 
 var questions = [
     {
@@ -32,24 +38,43 @@ var questions = [
 ]
 
 function startQuiz() {
-    console.log('start game');
     startSection.classList.add('hide');
     quizBox.classList.remove('hide');
     nextQuestion()
 }
 
 function nextQuestion() {
-    document.getElementById('question').textContent = questions[0].q;
-    document.getElementById('btn1').textContent = questions[0].b[0];
-    document.getElementById('btn2').textContent = questions[0].b[1];
-    document.getElementById('btn3').textContent = questions[0].b[2];
-    document.getElementById('btn4').textContent = questions[0].b[3];
-    
+    document.getElementById('question').textContent = questions[questionNumber].q;
+    document.getElementById('btn1').textContent = questions[questionNumber].b[0];
+    document.getElementById('btn2').textContent = questions[questionNumber].b[1];
+    document.getElementById('btn3').textContent = questions[questionNumber].b[2];
+    document.getElementById('btn4').textContent = questions[questionNumber].b[3];
 
+    userAnswerEl.addEventListener('click', userAnswer);   
+   // console.log(userAnswerEl);
+
+    //userAnswer();
 }
 
-function userAnswer() {
-
+function userAnswer(event) {
+    //console.log('hello')
+    var userChoice = event.target;
+   
+    if (questions[questionNumber].a === userChoice.textContent){
+        document.getElementById('result').textContent = "Correct";
+        console.log(document.getElementById('result'));
+        highScoreEl = highScoreEl + 15;
+        console.log(highScoreEl);
+    }
+    else { 
+        document.getElementById('result').textContent = "Incorrect";
+        console.log(document.getElementById('result'));
+        console.log(highScoreEl);
 }
+        console.log(userChoice.textContent)
+ //   var questionNumber = questions[]
+nextQuestion(questionNumber++);
+
+};
 
 startButton.addEventListener('click', startQuiz);

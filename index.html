@@ -8,16 +8,19 @@
 </head>
 
 <body id = "grid">
+    <!--header section containing the high score and timer elements-->
     <header class ="header" id="header">
-        <div id="highscore">
+        <div id="highscoreBtn">
             <button>High Score</button>
+            <h2 id="highscore"></h2>
         </div>
 
         <div id="timer">
             Timer 
         </div>
     </header>
-
+    <!--quiz section that contains the quiz-->
+    <!--start quiz section-->
     <section class ="content"> 
         <div class = "start" id = "start">
             <h1>Welcome to the coding quiz!</h1>
@@ -26,9 +29,8 @@
             </p>
             <button id="startBtn">Start</button>
         </div>
-
+    <!--the quiz section-->
         <div class="quiz hide" id="quiz">
-            <div class="questionCount">Question # </div>
             <h2 id ="question"> Question </h2>
             <div>
                 <ul class= "answers">
@@ -37,6 +39,9 @@
                     <li class= "answer3"><button id="btn3"></button></li>
                     <li class= "answer4"><button id="btn4"></button></li>
                 </ul>
+            </div>
+            <div>
+                <h4 id="result"></h4>
             </div>
         </div>
 

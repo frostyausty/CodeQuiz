@@ -2,6 +2,14 @@
     list-style-type: none;
 }
 
+.answers li button{
+    color: #457b9d; 
+    font-family:Gill Sans Extrabold, sans-serif;
+    font-size: 20px;
+    border-radius: 2px;
+    margin-top: 8px;
+}
+
 #grid {
     display: grid;
     grid-template-columns: 20%, 20%, 20%, 20%, 20%;
@@ -34,7 +42,6 @@
 #timer{
     grid-column: 4 / 6;
 }
-
 
 .content {
     grid-area: 3 / 2 / 4 / 5;
